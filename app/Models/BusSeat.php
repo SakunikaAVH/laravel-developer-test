@@ -8,4 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class BusSeat extends Model
 {
     use HasFactory;
+    public $timestamps = false;
+
+    public function bus()
+    {
+        return $this->hasOne(Bus::class, 'id', 'bus_id');
+    }
+
+    public function busScheduleBooking()
+    {
+        return $this->hasOne(BusScheduleBooking::class, 'id', 'bus_schedule_booking_id');
+    }
+
 }
