@@ -15,7 +15,11 @@ class CreateRoutesTable extends Migration
     {
         Schema::create('routes', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('node_one');
+            $table->string('node_two');
+            $table->string('route_number');
+            $table->string('distance');
+            $table->time('time');
         });
     }
 
