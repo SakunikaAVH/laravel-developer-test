@@ -22,3 +22,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('/buses', [BusController::class,'index']);
 
 Route::post('/buses', [BusController::class,'store']);
+
+Route::patch('/buses/{bus}', [BusController::class,'update']);
+

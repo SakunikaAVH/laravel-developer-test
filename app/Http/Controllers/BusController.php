@@ -79,7 +79,21 @@ class BusController extends Controller
      */
     public function update(Request $request, Bus $bus)
     {
-        //
+        request()->validate([
+            'name' => 'required',
+            'type' => 'required',
+            'vehicle_number' => 'required',
+        ]);
+    
+        $success = $bus->update([
+            'name' => request('name'),
+            'type' => request('type'),
+            'vehicle_number' => request('vehicle_number'),
+        ]);
+    
+        return [
+            'success' => $success
+        ];
     }
 
     /**
