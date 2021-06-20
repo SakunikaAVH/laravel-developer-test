@@ -25,3 +25,4 @@ Route::post('/buses', [BusController::class,'store']);
 
 Route::patch('/buses/{bus}', [BusController::class,'update']);
 
+Route::delete('/buses/{bus}', [BusController::class,'destroy']);
