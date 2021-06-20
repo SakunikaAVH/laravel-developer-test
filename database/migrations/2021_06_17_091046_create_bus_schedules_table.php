@@ -15,7 +15,11 @@ class CreateBusSchedulesTable extends Migration
     {
         Schema::create('bus_schedules', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->unsignedBigInteger('bus_route_id');
+            $table->enum('direction', ['forward','reverse']);
+            $table->dateTime('start_timestamp');
+            $table->dateTime('end_timestamp');
+            $table->foreign('bus_route_id')->references('id')->on('bus_routes');
         });
     }
 
