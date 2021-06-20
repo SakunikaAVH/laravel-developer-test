@@ -35,7 +35,17 @@ class BusController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        request()->validate([
+            'name' => 'required',
+            'type' => 'required',
+            'vehicle_number' => 'required',
+        ]);
+    
+        return Bus::create([
+            'name' => request('name'),
+            'type' => request('type'),
+            'vehicle_number' => request('vehicle_number'),
+        ]);
     }
 
     /**

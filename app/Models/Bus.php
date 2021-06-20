@@ -10,6 +10,12 @@ class Bus extends Model
     use HasFactory;
     public $timestamps = false;
 
+    protected $fillable = [
+        'name',
+        'type',
+        'vehicle_number',
+    ];
+
     public function busRoute()
     {
         return $this->hasOne(BusRoute::class, 'id', 'bus_route_id');
