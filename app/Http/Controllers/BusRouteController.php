@@ -35,7 +35,17 @@ class BusRouteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        request()->validate([
+            'bus_id' => 'required',
+            'route_id' => 'required',
+            'status' => 'required',
+        ]);
+    
+        return BusRoute::create([
+            'bus_id' => request('bus_id'),
+            'route_id' => request('route_id'),
+            'status' => request('status'),
+        ]);
     }
 
     /**
