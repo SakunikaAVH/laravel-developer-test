@@ -79,7 +79,21 @@ class BusRouteController extends Controller
      */
     public function update(Request $request, BusRoute $busRoute)
     {
-        //
+        request()->validate([
+            'bus_id' => 'required',
+            'route_id' => 'required',
+            'status' => 'required',
+        ]);
+    
+        $success = $busRoute->update([
+            'bus_id' => request('bus_id'),
+            'route_id' => request('route_id'),
+            'status' => request('status'),
+        ]);
+    
+        return [
+            'success' => $success
+        ];
     }
 
     /**
