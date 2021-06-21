@@ -104,6 +104,10 @@ class BusRouteController extends Controller
      */
     public function destroy(BusRoute $busRoute)
     {
-        //
+        $success = $busRoute->delete();
+
+        return [
+            'success' => $success
+        ];
     }
 }
