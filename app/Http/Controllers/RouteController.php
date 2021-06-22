@@ -83,7 +83,25 @@ class RouteController extends Controller
      */
     public function update(Request $request, Route $route)
     {
-        //
+        request()->validate([
+            'node_one' => 'required',
+            'node_two' => 'required',
+            'route_number' => 'required',
+            'distance' => 'required',
+            'time' => 'required',
+        ]);
+    
+        $success = $route->update([
+            'node_one' => request('node_one'),
+            'node_two' => request('node_two'),
+            'route_number' => request('route_number'),
+            'distance' => request('distance'),
+            'time' => request('time'),
+        ]);
+    
+        return [
+            'success' => $success
+        ];
     }
 
     /**
