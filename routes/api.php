@@ -51,3 +51,5 @@ Route::get('/routes', [RouteController::class,'index']);
 Route::post('/routes', [RouteController::class,'store']);
 
 Route::patch('/routes/{route}', [RouteController::class,'update']);
+
+Route::delete('/routes/{route}', [RouteController::class,'destroy']);
