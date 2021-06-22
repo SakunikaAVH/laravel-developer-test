@@ -40,3 +40,5 @@ Route::delete('/bus_routes/{bus_route}', [BusRouteController::class,'destroy']);
 Route::get('/bus_seats', [BusSeatController::class,'index']);
 
 Route::post('/bus_seats', [BusSeatController::class,'store']);
+
+Route::patch('/bus_seats/{bus_seat}', [BusSeatController::class,'update']);

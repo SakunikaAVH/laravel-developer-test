@@ -79,7 +79,21 @@ class BusSeatController extends Controller
      */
     public function update(Request $request, BusSeat $busSeat)
     {
-        //
+        request()->validate([
+            'bus_id' => 'required',
+            'seat_number' => 'required',
+            'price' => 'required',
+        ]);
+    
+        $success = $busSeat->update([
+            'bus_id' => request('bus_id'),
+            'seat_number' => request('seat_number'),
+            'price' => request('price'),
+        ]);
+    
+        return [
+            'success' => $success
+        ];
     }
 
     /**
