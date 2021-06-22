@@ -35,7 +35,17 @@ class BusSeatController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        request()->validate([
+            'bus_id' => 'required',
+            'seat_number' => 'required',
+            'price' => 'required',
+        ]);
+    
+        return BusSeat::create([
+            'bus_id' => request('bus_id'),
+            'seat_number' => request('seat_number'),
+            'price' => request('price'),
+        ]);
     }
 
     /**
