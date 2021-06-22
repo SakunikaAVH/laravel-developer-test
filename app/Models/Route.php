@@ -10,6 +10,14 @@ class Route extends Model
     use HasFactory;
     public $timestamps = false;
 
+    protected $fillable = [
+        'node_one',
+        'node_two',
+        'route_number',
+        'distance',
+        'time',
+    ];
+
     public function busRoutes()
     {
         return $this->hasMany(BusRoute::class);
