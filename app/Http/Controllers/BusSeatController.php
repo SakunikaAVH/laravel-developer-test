@@ -14,7 +14,7 @@ class BusSeatController extends Controller
      */
     public function index()
     {
-        //
+        return BusSeat::all();
     }
 
     /**
