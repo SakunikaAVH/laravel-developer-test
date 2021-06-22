@@ -104,6 +104,10 @@ class BusSeatController extends Controller
      */
     public function destroy(BusSeat $busSeat)
     {
-        //
+        $success = $busSeat->delete();
+
+        return [
+            'success' => $success
+        ];
     }
 }
