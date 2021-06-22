@@ -3,6 +3,7 @@
 use App\Http\Controllers\BusController;
 use App\Http\Controllers\BusRouteController;
 use App\Http\Controllers\BusSeatController;
+use App\Http\Controllers\RouteController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -44,3 +45,5 @@ Route::post('/bus_seats', [BusSeatController::class,'store']);
 Route::patch('/bus_seats/{bus_seat}', [BusSeatController::class,'update']);
 
 Route::delete('/bus_seats/{bus_seat}', [BusSeatController::class,'destroy']);
+
+Route::get('/routes', [RouteController::class,'index']);
