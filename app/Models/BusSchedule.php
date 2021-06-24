@@ -10,6 +10,13 @@ class BusSchedule extends Model
     use HasFactory;
     public $timestamps = false;
 
+    protected $fillable = [
+        'bus_route_id',
+        'direction',
+        'start_timestamp',
+        'end_timestamp',
+    ];
+
     public function busRoute()
     {
         return $this->hasOne(BusRoute::class, 'id', 'bus_route_id');

@@ -35,7 +35,19 @@ class BusScheduleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        request()->validate([
+            'bus_route_id' => 'required',
+            'direction' => 'required',
+            'start_timestamp' => 'required',
+            'end_timestamp' => 'required',
+        ]);
+    
+        return BusSchedule::create([
+            'bus_route_id' => request('bus_route_id'),
+            'direction' => request('direction'),
+            'start_timestamp' => request('start_timestamp'),
+            'end_timestamp' => request('end_timestamp'),
+        ]);
     }
 
     /**
