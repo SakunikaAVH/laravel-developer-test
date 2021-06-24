@@ -35,7 +35,23 @@ class BusScheduleBookingController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        request()->validate([
+            'bus_seat_id' => 'required',
+            'user_id' => 'required',
+            'bus_schedule_id' => 'required',
+            'seat_number' => 'required',
+            'price' => 'required',
+            'status' => 'required',
+        ]);
+    
+        return BusScheduleBooking::create([
+            'bus_seat_id' => request('bus_seat_id'),
+            'user_id' => request('user_id'),
+            'bus_schedule_id' => request('bus_schedule_id'),
+            'seat_number' => request('seat_number'),
+            'price' => request('price'),
+            'status' => request('status'),
+        ]);
     }
 
     /**
