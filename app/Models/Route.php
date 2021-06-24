@@ -20,7 +20,10 @@ class Route extends Model
 
     public function busRoutes()
     {
-        return $this->hasMany(BusRoute::class);
+        return $this->belongsToMany(Bus::class, 'bus_routes', 'route_id', 'bus_id');
+        // belonsToMany is used for many to many relationships, second parameter is the name of the pivot table, 
+        // 3rd parameter is the column name in pivot table which maps with the current model id, 
+        // 4th parameter is the column name in pivot table which maps with the other related model id.
     }
 
 }
