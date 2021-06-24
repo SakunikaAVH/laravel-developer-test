@@ -108,6 +108,10 @@ class BusScheduleController extends Controller
      */
     public function destroy(BusSchedule $busSchedule)
     {
-        //
+        $success = $busSchedule->delete();
+
+        return [
+            'success' => $success
+        ];
     }
 }

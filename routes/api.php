@@ -60,3 +60,5 @@ Route::get('/bus_schedules', [BusScheduleController::class,'index']);
 Route::post('/bus_schedules', [BusScheduleController::class,'store']);
 
 Route::patch('/bus_schedules/{bus_schedule}', [BusScheduleController::class,'update']);
+
+Route::delete('/bus_schedules/{bus_schedule}', [BusScheduleController::class,'destroy']);
