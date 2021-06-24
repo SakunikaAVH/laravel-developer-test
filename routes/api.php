@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BusController;
 use App\Http\Controllers\BusRouteController;
+use App\Http\Controllers\BusScheduleController;
 use App\Http\Controllers\BusSeatController;
 use App\Http\Controllers\RouteController;
 use Illuminate\Http\Request;
@@ -53,3 +54,5 @@ Route::post('/routes', [RouteController::class,'store']);
 Route::patch('/routes/{route}', [RouteController::class,'update']);
 
 Route::delete('/routes/{route}', [RouteController::class,'destroy']);
+
+Route::get('/bus_schedules', [BusScheduleController::class,'index']);
