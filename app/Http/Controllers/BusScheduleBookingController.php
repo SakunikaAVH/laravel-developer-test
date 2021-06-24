@@ -14,7 +14,7 @@ class BusScheduleBookingController extends Controller
      */
     public function index()
     {
-        //
+        return BusScheduleBooking::all();
     }
 
     /**
