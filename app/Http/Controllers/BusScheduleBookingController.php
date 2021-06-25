@@ -36,10 +36,10 @@ class BusScheduleBookingController extends Controller
     public function store(Request $request)
     {
         request()->validate([
-            'bus_seat_id' => 'required',
-            'user_id' => 'required',
-            'bus_schedule_id' => 'required',
-            'seat_number' => 'required',
+            'bus_seat_id' => 'required|exists:bus_seats,id',
+            'user_id' => 'required|exists:users,id',
+            'bus_schedule_id' => 'required|exists:bus_schedules,id',
+            'seat_number' => 'required|exists:bus_seats',
             'price' => 'required',
             'status' => 'required',
         ]);
@@ -86,10 +86,10 @@ class BusScheduleBookingController extends Controller
     public function update(Request $request, BusScheduleBooking $busScheduleBooking)
     {
         request()->validate([
-            'bus_seat_id' => 'required',
-            'user_id' => 'required',
-            'bus_schedule_id' => 'required',
-            'seat_number' => 'required',
+            'bus_seat_id' => 'required|exists:bus_seats,id',
+            'user_id' => 'required|exists:users,id',
+            'bus_schedule_id' => 'required|exists:bus_schedules,id',
+            'seat_number' => 'required|exists:bus_seats',
             'price' => 'required',
             'status' => 'required',
         ]);
