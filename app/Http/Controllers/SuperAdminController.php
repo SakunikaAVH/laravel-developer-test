@@ -14,7 +14,7 @@ class SuperAdminController extends Controller
      */
     public function index()
     {
-        //
+        return SuperAdmin::all();
     }
 
     /**

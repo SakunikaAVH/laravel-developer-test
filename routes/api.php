@@ -6,6 +6,7 @@ use App\Http\Controllers\BusScheduleBookingController;
 use App\Http\Controllers\BusScheduleController;
 use App\Http\Controllers\BusSeatController;
 use App\Http\Controllers\RouteController;
+use App\Http\Controllers\SuperAdminController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -71,3 +72,5 @@ Route::post('/bus_schedule_bookings', [BusScheduleBookingController::class,'stor
 Route::patch('/bus_schedule_bookings/{bus_schedule_booking}', [BusScheduleBookingController::class,'update']);
 
 Route::delete('/bus_schedule_bookings/{bus_schedule_booking}', [BusScheduleBookingController::class,'destroy']);
+
+Route::get('/super_admins', [SuperAdminController::class,'index']);
