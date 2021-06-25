@@ -36,8 +36,8 @@ class BusRouteController extends Controller
     public function store(Request $request)
     {
         request()->validate([
-            'bus_id' => 'required',
-            'route_id' => 'required',
+            'bus_id' => 'required|exists:buses,id',
+            'route_id' => 'required|exists:routes,id',
             'status' => 'required',
         ]);
     
@@ -80,8 +80,8 @@ class BusRouteController extends Controller
     public function update(Request $request, BusRoute $busRoute)
     {
         request()->validate([
-            'bus_id' => 'required',
-            'route_id' => 'required',
+            'bus_id' => 'required|exists:buses,id',
+            'route_id' => 'required|exists:routes,id',
             'status' => 'required',
         ]);
     
