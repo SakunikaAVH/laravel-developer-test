@@ -9,4 +9,11 @@ class SuperAdmin extends Model
 {
     use HasFactory;
     public $timestamps = false;
+
+    protected $fillable = [
+        'name',
+        'email',
+        'password',
+    ];
+
 }

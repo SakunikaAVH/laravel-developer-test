@@ -74,3 +74,6 @@ Route::patch('/bus_schedule_bookings/{bus_schedule_booking}', [BusScheduleBookin
 Route::delete('/bus_schedule_bookings/{bus_schedule_booking}', [BusScheduleBookingController::class,'destroy']);
 
 Route::get('/super_admins', [SuperAdminController::class,'index']);
+
+Route::post('/super_admins', [SuperAdminController::class,'store']);
+
