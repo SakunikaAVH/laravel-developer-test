@@ -36,7 +36,7 @@ class BusScheduleController extends Controller
     public function store(Request $request)
     {
         request()->validate([
-            'bus_route_id' => 'required',
+            'bus_route_id' => 'required|exists:bus_routes,id',
             'direction' => 'required',
             'start_timestamp' => 'required',
             'end_timestamp' => 'required',
@@ -82,7 +82,7 @@ class BusScheduleController extends Controller
     public function update(Request $request, BusSchedule $busSchedule)
     {
         request()->validate([
-            'bus_route_id' => 'required',
+            'bus_route_id' => 'required|exists:bus_routes,id',
             'direction' => 'required',
             'start_timestamp' => 'required',
             'end_timestamp' => 'required',
