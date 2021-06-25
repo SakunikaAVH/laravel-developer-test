@@ -104,6 +104,10 @@ class SuperAdminController extends Controller
      */
     public function destroy(SuperAdmin $superAdmin)
     {
-        //
+        $success = $superAdmin->delete();
+
+        return [
+            'success' => $success
+        ];
     }
 }

@@ -79,3 +79,4 @@ Route::post('/super_admins', [SuperAdminController::class,'store']);
 
 Route::patch('/super_admins/{super_admin}', [SuperAdminController::class,'update']);
 
+Route::delete('/super_admins/{super_admin}', [SuperAdminController::class,'destroy']);
