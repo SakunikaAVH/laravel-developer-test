@@ -7,6 +7,7 @@ use App\Http\Controllers\BusScheduleController;
 use App\Http\Controllers\BusSeatController;
 use App\Http\Controllers\RouteController;
 use App\Http\Controllers\SuperAdminController;
+use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -80,3 +81,5 @@ Route::post('/super_admins', [SuperAdminController::class,'store']);
 Route::patch('/super_admins/{super_admin}', [SuperAdminController::class,'update']);
 
 Route::delete('/super_admins/{super_admin}', [SuperAdminController::class,'destroy']);
+
+Route::get('/users', [UserController::class,'index']);
