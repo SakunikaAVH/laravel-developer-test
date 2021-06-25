@@ -77,9 +77,23 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, User $user)
     {
-        //
+        request()->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'password' => 'required',
+        ]);
+    
+        $success = $user->update([
+            'name' => request('name'),
+            'email' => request('email'),
+            'password' => request('password'),
+        ]);
+    
+        return [
+            'success' => $success
+        ];
     }
 
     /**

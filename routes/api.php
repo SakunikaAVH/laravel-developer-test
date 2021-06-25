@@ -85,3 +85,5 @@ Route::delete('/super_admins/{super_admin}', [SuperAdminController::class,'destr
 Route::get('/users', [UserController::class,'index']);
 
 Route::post('/users', [UserController::class,'store']);
+
+Route::patch('/users/{user}', [UserController::class,'update']);
