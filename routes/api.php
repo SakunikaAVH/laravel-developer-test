@@ -77,3 +77,5 @@ Route::get('/super_admins', [SuperAdminController::class,'index']);
 
 Route::post('/super_admins', [SuperAdminController::class,'store']);
 
+Route::patch('/super_admins/{super_admin}', [SuperAdminController::class,'update']);
+

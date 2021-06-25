@@ -79,7 +79,21 @@ class SuperAdminController extends Controller
      */
     public function update(Request $request, SuperAdmin $superAdmin)
     {
-        //
+        request()->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'password' => 'required',
+        ]);
+    
+        $success = $superAdmin->update([
+            'name' => request('name'),
+            'email' => request('email'),
+            'password' => request('password'),
+        ]);
+    
+        return [
+            'success' => $success
+        ];
     }
 
     /**
