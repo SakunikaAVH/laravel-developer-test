@@ -36,7 +36,7 @@ class BusSeatController extends Controller
     public function store(Request $request)
     {
         request()->validate([
-            'bus_id' => 'required',
+            'bus_id' => 'required|exists:buses,id',
             'seat_number' => 'required',
             'price' => 'required',
         ]);
@@ -80,7 +80,7 @@ class BusSeatController extends Controller
     public function update(Request $request, BusSeat $busSeat)
     {
         request()->validate([
-            'bus_id' => 'required',
+            'bus_id' => 'required|exists:buses,id',
             'seat_number' => 'required',
             'price' => 'required',
         ]);
