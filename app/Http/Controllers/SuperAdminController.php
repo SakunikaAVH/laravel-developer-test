@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\SuperAdmin;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class SuperAdminController extends Controller
 {
@@ -44,7 +45,7 @@ class SuperAdminController extends Controller
         return SuperAdmin::create([
             'name' => request('name'),
             'email' => request('email'),
-            'password' => request('password'),
+            'password' => Hash::make(request('password')),
         ]);
     }
 
@@ -88,7 +89,7 @@ class SuperAdminController extends Controller
         $success = $superAdmin->update([
             'name' => request('name'),
             'email' => request('email'),
-            'password' => request('password'),
+            'password' => Hash::make(request('password')),
         ]);
     
         return [
