@@ -88,8 +88,6 @@ Route::patch('/super_admins/{super_admin}', [SuperAdminController::class,'update
 
 Route::delete('/super_admins/{super_admin}', [SuperAdminController::class,'destroy']);
 
-
-
 Route::post('/users', [UserController::class,'store']);
 
 Route::patch('/users/{user}', [UserController::class,'update']);
@@ -97,3 +95,5 @@ Route::patch('/users/{user}', [UserController::class,'update']);
 Route::delete('/users/{user}', [UserController::class,'destroy']);
 
 Route::post('/register', [UserController::class,'register']);
+
+Route::post('/login', [UserController::class,'login']);
