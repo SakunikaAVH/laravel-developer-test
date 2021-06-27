@@ -26,6 +26,12 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+// Protected routes
+Route::group(['middleware' => [('auth:sanctum')]], function () {
+    Route::get('/users', [UserController::class,'index']);
+});
+
+
 Route::get('/buses', [BusController::class,'index']);
 
 Route::post('/buses', [BusController::class,'store']);
@@ -82,10 +88,12 @@ Route::patch('/super_admins/{super_admin}', [SuperAdminController::class,'update
 
 Route::delete('/super_admins/{super_admin}', [SuperAdminController::class,'destroy']);
 
-Route::get('/users', [UserController::class,'index']);
+
 
 Route::post('/users', [UserController::class,'store']);
 
 Route::patch('/users/{user}', [UserController::class,'update']);
 
 Route::delete('/users/{user}', [UserController::class,'destroy']);
+
+Route::post('/register', [UserController::class,'register']);
